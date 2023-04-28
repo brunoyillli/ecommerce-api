@@ -49,7 +49,7 @@ public class Product {
 	@Column(name = "active")
 	private boolean active;
 	
-	@Column(name = "units_in_shock")
+	@Column(name = "units_in_stock")
 	private int unitsInShock;
 	
 	@Column(name = "date_created")
