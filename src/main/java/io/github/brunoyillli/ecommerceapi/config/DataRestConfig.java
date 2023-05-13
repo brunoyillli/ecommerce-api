@@ -39,7 +39,8 @@ public class DataRestConfig implements RepositoryRestConfigurer {
 		exposeIds(config);
 	}
 
-	private void disableHttpMethods(Class<?> theClass, RepositoryRestConfiguration config, HttpMethod[] theUnsupportedActions) {
+	private void disableHttpMethods(Class<?> theClass, RepositoryRestConfiguration config,
+			HttpMethod[] theUnsupportedActions) {
 		config.getExposureConfiguration().forDomainType(theClass)
 				.withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
 				.withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
@@ -52,7 +53,7 @@ public class DataRestConfig implements RepositoryRestConfigurer {
 		for (EntityType<?> tempEntityType : entities) {
 			entityClasses.add(tempEntityType.getJavaType());
 		}
-		
+
 		Class<?>[] domainTypes = entityClasses.toArray(new Class[0]);
 		config.exposeIdsFor(domainTypes);
 	}

@@ -11,7 +11,7 @@ import io.github.brunoyillli.ecommerceapi.entity.State;
 
 @CrossOrigin("http://localhost:4200")
 @RepositoryRestResource
-public interface StateRepository extends JpaRepository<State, Integer>{
-	
+public interface StateRepository extends JpaRepository<State, Integer> {
+
 	List<State> findByCountryCode(@Param("code") String code);
 }
